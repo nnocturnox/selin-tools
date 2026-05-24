@@ -1,0 +1,7 @@
+alert tcp any any -> any any (
+    msg:"Suspicious TCP SYN Traffic Detected";
+    flags:S;
+    detection_filter:track by_src, count 20, seconds 1;
+    sid:2000002;
+    rev:1;
+)
