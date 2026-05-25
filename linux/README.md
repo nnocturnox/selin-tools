@@ -11,6 +11,7 @@ linux/
 ├── detection/         # Network attack detection tools (C++)
 │   ├── detector.cpp       # SYN Flood attack detector
 │   ├── pod_detector.cpp   # Ping of Death (PoD) detector
+│   ├── local.rules        # Custom Snort rule for TCP SYN scan detection
 │   └── README.md
 ├── hardening/         # System hardening scripts (Bash)
 │   ├── hardening.sh       # Automated Linux hardening script
@@ -29,6 +30,7 @@ Real-time network traffic monitoring tools built with **libpcap**. These program
 |---|---|
 | `detector.cpp` | Detects SYN Flood attacks by counting TCP SYN packets per second |
 | `pod_detector.cpp` | Detects oversized ICMP packets indicative of a Ping of Death attack |
+| `local.rules` | Custom Snort rule that detects horizontal TCP SYN scanning via rate-based detection |
 
 ### `hardening/`
 An automated Bash script that applies a series of security configurations to a fresh Linux system.
@@ -45,6 +47,7 @@ An automated Bash script that applies a series of security configurations to a f
 - **Privileges:** `sudo` or root access required for all tools
 - **Dependencies:**
   - `libpcap-dev` — for C++ detection tools
+  - `snort` — for Snort IDS rules
   - `ufw` — for the hardening script (auto-installed)
   - `g++` — to compile C++ source files
 
