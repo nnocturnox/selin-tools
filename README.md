@@ -1,5 +1,3 @@
-In progress  
----
 # System & Security Tools
 
 A collection of custom scripts and utilities for Windows and Linux systems.
