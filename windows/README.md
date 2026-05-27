@@ -1,38 +1,46 @@
-1. Artifact Cleanup (cleanup.ps1)
-This script automates the removal of digital footprints left behind by daily Windows usage. It is specifically designed to run at user logoff to ensure a fresh start for the next session.
+# 🪟 Windows — System & Security Tools
 
-Key Features:
+A collection of PowerShell scripts and utilities designed for Windows system maintenance and privacy. These tools are built for educational purposes, home lab use, and users who want to automate security-related tasks on their Windows environments.
 
-Browser Purge: Clears history and cache for Chrome and Edge.
+---
 
-System Reset: Wipes "Jump Lists" and "Recent Files" records.
+## 📁 Folder Structure
 
-Logoff Automation: Cleans up all traces during the logoff sequence.
+```
+windows/
+├── cleanup/                # Artifact removal scripts (PowerShell)
+│   ├── cleanup.ps1             # Removes browser history, cache, and recent files at logoff
+│   └── README.md
+└── README.md
+```
 
-Setup: Running at Logoff (Task Scheduler)
-To ensure the script triggers exactly when you log off, follow these steps:
+---
 
-Open Task Scheduler and click Create Basic Task.
+## 🔍 Modules Overview
 
-Trigger: Select "When a specific event is logged".
+### `cleanup/`
+An automated PowerShell script that wipes digital traces left by everyday Windows usage. Runs at user logoff via Task Scheduler.
 
-Log: Select Security.
+| Script | Description |
+|---|---|
+| `cleanup.ps1` | Clears Chrome/Edge history & cache, Jump Lists, and Recent Files |
 
-Source: Select Microsoft-Windows-Security-Auditing.
+---
 
-Event ID: Type 4647 (This is the Windows code for User Logoff).
+## ⚙️ General Requirements
 
-Action: Select Start a program.
+- **OS:** Windows 10 or Windows 11
+- **Privileges:** Administrator rights required for execution policy configuration
+- **Dependencies:** PowerShell (built-in)
 
-Program/script: powershell.exe
+---
 
-Add arguments: -ExecutionPolicy Bypass -File "C:\path\to\cleanup.ps1"
+## ⚠️ Disclaimer
 
-Note: This configuration ensures that every time you sign out, nnocturnox-tools sweeps the system clean.
+These scripts are intended for **educational and personal privacy purposes only**. Deletion performed by these tools is permanent. Always review the scripts before running them on your system. The authors are not responsible for any data loss caused by misuse.
 
-Requirements & Disclaimer
-OS: Windows 10 or 11.
+---
 
-Permissions: Must be configured with appropriate execution policies.
+## 📄 License
 
-Disclaimer: Use at your own risk. Deletion is permanent.
+MIT License — see the root [`LICENSE`](../../LICENSE) file for details.
