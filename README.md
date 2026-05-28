@@ -8,6 +8,7 @@ This repository is organized by operating system and specific use cases. Each di
 
 * **[`/windows`](./windows)** — PowerShell and batch scripts for Windows.
 * **[`/linux`](./linux)** — Bash and Python scripts for Linux.
+* **[`/cross-platform`](./cross-platform)** — Scripts and tools compatible with both Windows and Linux.
 
 ---
 
